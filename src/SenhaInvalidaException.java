@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
+public class SenhaInvalidaException extends RuntimeException {
 
-public class SenhaInvalidaException {
+    public SenhaInvalidaException(String mensagem) {
+        super(mensagem);
+    }
 }

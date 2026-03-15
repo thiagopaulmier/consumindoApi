@@ -1,4 +1,6 @@
-package PACKAGE_NAME;
+class ErroConsultaGitHubException extends RuntimeException {
 
-public class ErroConsultaGitHubException {
+    public ErroConsultaGitHubException(String mensagem) {
+        super(mensagem);
+    }
 }
