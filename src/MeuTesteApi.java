@@ -18,7 +18,7 @@ public class MeuTesteApi {
 
         Scanner scanner = new Scanner(System.in);
         String busca = "";
-        // 1. Criamos a lista que guardará os objetos do tipo Titulo
+        // lista que guardará os objetos do tipo Titulo
         List<Titulo> listaDeFilmes = new ArrayList<>();
 
         // Configurando o Gson com Pretty Printing
@@ -29,7 +29,7 @@ public class MeuTesteApi {
             busca = scanner.nextLine();
 
             if (busca.equalsIgnoreCase("sair")) {
-                break; // Sai do laço imediatamente
+                break;
             }
 
             String chave = "b195bb55";
@@ -44,7 +44,7 @@ public class MeuTesteApi {
                 // Transformando o JSON da resposta em objeto Java
                 Titulo meuTitulo = gson.fromJson(response.body(), Titulo.class);
 
-                // 2. Adicionando o filme encontrado à nossa lista
+                // Adicionando o filme encontrado à nossa lista
                 listaDeFilmes.add(meuTitulo);
                 System.out.println("Filme adicionado à lista!");
 
@@ -53,11 +53,11 @@ public class MeuTesteApi {
             }
         }
 
-        // 3. Ao sair do loop, exibimos a lista completa no console
+        // Ao sair do loop, exibimos a lista completa no console
         System.out.println("\n--- LISTA FINAL DE FILMES ---");
         System.out.println(listaDeFilmes);
 
-        // 4. Salvando a lista inteira como um JSON no arquivo
+        // Salvando a lista inteira como um JSON no arquivo
         try (FileWriter arquivo = new FileWriter("meus_filmes.json")) {
             arquivo.write(gson.toJson(listaDeFilmes));
             System.out.println("\nArquivo JSON gerado com sucesso!");
